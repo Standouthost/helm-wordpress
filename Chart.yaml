@@ -1,4 +1,4 @@
 apiVersion: v2
 name: wordpress
 description: A Helm chart for deploying WordPress and MariaDB
-version: 0.1.0
+version: 1.0.0
