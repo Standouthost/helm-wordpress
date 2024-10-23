@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0 (2024-10-23)
+
+
+### Features
+
+* initial release ([00d3e3f](https://github.com/Standouthost/helm-wordpress/commit/00d3e3f0ce59d0a9336ec03f81616ba07652a569))
+
+
+### Bug Fixes
+
+* update vs inputs ([2159a1b](https://github.com/Standouthost/helm-wordpress/commit/2159a1bf30362e11f8b7841dbdbb028a865a7c65))
+
 ## [2.0.0](https://github.com/Standouthost/helm-webapp/compare/webapp-v1.2.0...webapp-v2.0.0) (2024-10-23)
 
 
