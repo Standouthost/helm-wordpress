@@ -2,3 +2,14 @@ apiVersion: v2
 name: wordpress
 description: A Helm chart for deploying WordPress and MariaDB
 version: 0.1.0
+annotations:
+  org.opencontainers.image.title: "wordpress"
+  org.opencontainers.image.description: "A Helm chart for deploying WordPress and MariaDB"
+  org.opencontainers.image.ref.name: "wordpress"
+  org.opencontainers.image.vendor: "Jmainguy"
+  org.opencontainers.image.licenses: "GPL-2.0"
+  org.opencontainers.image.authors: "Jonathan Seth Mainguy <jon@soh.re>"
+  org.opencontainers.image.source: "https://github.com/Standouthost/helm-wordpress"
+  org.opencontainers.image.url: "https://github.com/Standouthost/helm-wordpress"
+  org.opencontainers.image.documentation: "https://github.com/Standouthost/helm-wordpress"
+  org.opencontainers.image.issue-tracker: "https://github.com/Standouthost/helm-wordpress/issues"
