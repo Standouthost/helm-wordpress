@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
-  name: {{ .Values.name }}
+  name: {{ include "wordpress.fullname" . }}
 spec:
   hosts:
     {{- range .Values.virtualService.hosts }}
@@ -12,6 +12,6 @@ spec:
   http:
     - route:
         - destination:
-            host: {{ .Values.name }}
+            host: {{ include "wordpress.fullname" . }}
             port:
-              number: {{ .Values.service.port }}
+              number: {{ .Values.service.wordpressPort }}
