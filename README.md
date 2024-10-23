@@ -18,6 +18,9 @@ A Helm chart for deploying WordPress and MariaDB
 | service.mariadbPort | int | `3306` |  |
 | service.type | string | `"ClusterIP"` |  |
 | service.wordpressPort | int | `80` |  |
+| virtualService.gateway.name | string | `"http-gateway"` |  |
+| virtualService.gateway.namespace | string | `"istio-system"` |  |
+| virtualService.hosts[0] | string | `"example.com"` |  |
 | wordpress.image | string | `"wordpress:latest"` |  |
 | wordpress.replicaCount | int | `1` |  |
 | wordpress.storage.size | string | `"10Gi"` |  |
