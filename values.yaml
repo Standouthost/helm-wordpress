@@ -1,0 +1,52 @@
+replicaCount: 2
+
+image:
+  repository: zot.soh.re
+  name: hey.soh.re
+  tag: "v1.0.6"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+virtualService:
+  hosts:
+    - "hey.soh.re"
+  gateway:
+    name: "http-gateway"
+    namespace: "istio-system"
+
+resources: {}
+
+name: webapp
+
+# New section for the external secret
+secret:
+  enabled: false
+  name: my-external-secret  # Name of the existing secret
+
+postgres:
+  enabled: false
+  name: postgres-cluster
+  instances: 2
+  storage:
+    size: 10Gi
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
+
+# ConfigMap section - user can define which configmaps to mount
+configMaps: []
+  # - name: custom-configmap
+  #   mountPath: "/var/www/html"
+  #   data:
+  #     index.php: |
+  #       <?php
+  #       #$ip = getenv("REMOTE_ADDR");
+  #       $ip = getenv('HTTP_X_FORWARDED_FOR');
+  #       print 'Your IP is '.$ip.' Want to fight about it?';
+  #       echo "\n";
+  #       ?>

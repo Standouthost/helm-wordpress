@@ -1,0 +1,21 @@
+name: Release Helm Chart
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    uses: Jmainguy/helm-workflows/.github/workflows/helm-release.yml@v1
+    secrets:
+      helm_username: ${{ secrets.HELM_USERNAME }}
+      helm_password: ${{ secrets.HELM_PASSWORD }}
+    with:
+      helm_registry: zot.soh.re
+      chart_name: "webapp"
+      chart_path: "."

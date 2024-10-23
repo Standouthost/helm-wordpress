@@ -1,0 +1,17 @@
+name: Lint Helm Chart
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  helm-ci:
+    uses: Jmainguy/helm-workflows/.github/workflows/helm-ci.yml@v1
