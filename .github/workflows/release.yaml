@@ -17,5 +17,5 @@ jobs:
       helm_password: ${{ secrets.HELM_PASSWORD }}
     with:
       helm_registry: zot.soh.re
-      chart_name: "webapp"
+      chart_name: "wordpress"
       chart_path: "."

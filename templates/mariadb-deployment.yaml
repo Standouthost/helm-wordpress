@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mariadb.fullname" . }}
+spec:
+  replicas: {{ .Values.mariadb.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "mariadb.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "mariadb.fullname" . }}
+    spec:
+      containers:
+      - name: mariadb
+        image: {{ .Values.mariadb.image }}
+        env:
+        - name: MARIADB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "mariadb.fullname" . }}
+              key: root-password
+        - name: MARIADB_DATABASE
+          value: {{ .Values.mariadb.dbName }}
+        - name: MARIADB_USER
+          value: {{ .Values.mariadb.dbUser }}
+        - name: MARIADB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "mariadb.fullname" . }}
+              key: db-password
+        volumeMounts:
+        - name: mariadb-data
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mariadb-data
+        persistentVolumeClaim:
+          claimName: {{ include "mariadb.fullname" . }}-pvc
+

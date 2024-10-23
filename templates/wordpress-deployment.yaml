@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "wordpress.fullname" . }}
+spec:
+  replicas: {{ .Values.wordpress.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "wordpress.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "wordpress.fullname" . }}
+    spec:
+      containers:
+      - name: wordpress
+        image: {{ .Values.wordpress.image }}
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: {{ include "mariadb.fullname" . }}:{{ .Values.service.mariadbPort }}
+        - name: WORDPRESS_DB_USER
+          value: {{ .Values.mariadb.dbUser }}
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ include "mariadb.fullname" . }}
+              key: db-password
+        - name: WORDPRESS_DB_NAME
+          value: {{ .Values.mariadb.dbName }}
+        volumeMounts:
+        - name: wordpress-data
+          mountPath: /var/www/html
+      volumes:
+      - name: wordpress-data
+        persistentVolumeClaim:
+          claimName: {{ include "wordpress.fullname" . }}-pvc
+
