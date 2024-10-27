@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.1.0...wordpress-v1.1.1) (2024-10-27)
+
+
+### Bug Fixes
+
+* allow www redirect ([6dbf5ad](https://github.com/Standouthost/helm-wordpress/commit/6dbf5ad7596ba27ac1247a3c105de838052571de))
+
 ## [1.1.0](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.0.0...wordpress-v1.1.0) (2024-10-27)
 
 
