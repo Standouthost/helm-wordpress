@@ -8,7 +8,7 @@ spec:
     - {{ . }}
     {{- end }}
   gateways:
-    - {{ .Values.virtualService.gateway.namespace }}/{{ .Values.virtualService.gateway.name }}
+    - istio-system/{{ include "wordpress.fullname" . }}-gateway
   http:
     - route:
         - destination:

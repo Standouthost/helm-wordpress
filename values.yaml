@@ -22,7 +22,4 @@ service:
 virtualService:
   hosts:
     - "example.com"
-  gateway:
-    name: "http-gateway"
-    namespace: "istio-system"
 

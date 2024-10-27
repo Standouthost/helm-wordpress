@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "wordpress.fullname" . }}-tls
+  namespace: istio-system
+spec:
+  secretName: {{ include "wordpress.fullname" . }}-tls
+  issuerRef:
+    name: letsencrypt-http
+    kind: ClusterIssuer
+  dnsNames:
+{{- range .Values.virtualService.hosts }}
+    - {{ . }}
+{{- end }}
