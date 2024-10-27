@@ -1,7 +1,7 @@
 apiVersion: v2
 name: wordpress
 description: A Helm chart for deploying WordPress and MariaDB
-version: 1.0.0
+version: 1.1.0
 annotations:
   org.opencontainers.image.title: "wordpress"
   org.opencontainers.image.description: "A Helm chart for deploying WordPress and MariaDB"
