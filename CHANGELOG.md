@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.0.0...wordpress-v1.1.0) (2024-10-27)
+
+
+### Features
+
+* create gateway and certificate ([5d383be](https://github.com/Standouthost/helm-wordpress/commit/5d383be7f4e4a7f040df82413f9a2acdb8157ea4))
+
 ## 1.0.0 (2024-10-23)
 
 
