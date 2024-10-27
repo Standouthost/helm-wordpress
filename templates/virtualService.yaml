@@ -10,6 +10,24 @@ spec:
   gateways:
     - istio-system/{{ include "wordpress.fullname" . }}-gateway
   http:
+{{- if .Values.virtualService.redirectToPrimary }}
+    - match:
+        - uri:
+            prefix: "/"
+          authority:
+            regex: "^www\\.(.*)"
+      redirect:
+        authority: "{{ .Values.virtualService.hosts | first }}"
+{{- end }}
+    - match:
+      - uri:
+          prefix: /
+        scheme:
+          exact: http
+      redirect:
+        scheme: https
+        redirectCode: 302
+
     - route:
         - destination:
             host: {{ include "wordpress.fullname" . }}

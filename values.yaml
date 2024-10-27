@@ -22,4 +22,4 @@ service:
 virtualService:
   hosts:
     - "example.com"
-
+  redirectToPrimary: false
