@@ -24,3 +24,4 @@ A Helm chart for deploying WordPress and MariaDB
 | wordpress.replicaCount | int | `1` |  |
 | wordpress.storage.size | string | `"10Gi"` |  |
 
+
