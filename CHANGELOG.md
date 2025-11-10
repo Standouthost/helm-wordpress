@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.1.1...wordpress-v1.2.0) (2025-11-10)
+
+
+### Features
+
+* trigger release becauze zot deleted things ([f1da499](https://github.com/Standouthost/helm-wordpress/commit/f1da4994a6048008caf2bad684c3462691560334))
+
 ## [1.1.1](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.1.0...wordpress-v1.1.1) (2024-10-27)
 
 
