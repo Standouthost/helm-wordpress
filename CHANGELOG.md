@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.2.0...wordpress-v1.2.1) (2026-06-18)
+
+
+### Bug Fixes
+
+* use Recreate strategy for RWO PVC rollouts ([4addad2](https://github.com/Standouthost/helm-wordpress/commit/4addad276695056d13a8b8226dab7829f6a705d5))
+
 ## [1.2.0](https://github.com/Standouthost/helm-wordpress/compare/wordpress-v1.1.1...wordpress-v1.2.0) (2025-11-10)
 
 
