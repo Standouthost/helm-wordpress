@@ -4,6 +4,8 @@ metadata:
   name: {{ include "mariadb.fullname" . }}
 spec:
   replicas: {{ .Values.mariadb.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: {{ include "mariadb.fullname" . }}

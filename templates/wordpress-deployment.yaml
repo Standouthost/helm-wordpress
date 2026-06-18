@@ -4,6 +4,8 @@ metadata:
   name: {{ include "wordpress.fullname" . }}
 spec:
   replicas: {{ .Values.wordpress.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: {{ include "wordpress.fullname" . }}
